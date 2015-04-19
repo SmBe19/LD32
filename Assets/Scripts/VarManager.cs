@@ -26,7 +26,11 @@ public class VarManager : MonoBehaviour {
 	}
 
 	public void updateText(){
-		livesLabel.text = "lives: " + LiveCount;
+		if (LiveCount <= 0) {
+			livesLabel.text = "you lose";
+		} else {
+			livesLabel.text = "lives: " + LiveCount;
+		}
 		enemyLabel.text = "enemies: " + EnemyCount;
 	}
 	
