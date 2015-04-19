@@ -15,7 +15,7 @@ public class ControlRandCar : MonoBehaviour {
 		int layerMask = Physics.DefaultRaycastLayers;
 		layerMask ^= 1 << 8;
 		layerMask ^= 1 << 10;
-		if (Physics.Raycast (transform.position + transform.TransformDirection(Vector3.forward) * 1, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
+		if (Physics.SphereCast (transform.position + transform.TransformDirection(Vector3.forward) * 1, 1, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
 			if (hit.transform.tag == "Car") {
 				aControl = hit.transform.GetComponent<ControlRandCarController> ();
 				aControl.startControl ();
