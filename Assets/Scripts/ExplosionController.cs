@@ -6,6 +6,7 @@ public class ExplosionController : MonoBehaviour {
 	public VarManager varManager;
 	public float ExplosionDuration;
 	public bool exploding;
+	public AudioSource explosionSound;
 	float explosionProgress;
 	Vector3 startScale;
 
@@ -24,6 +25,10 @@ public class ExplosionController : MonoBehaviour {
 		startScale = transform.localScale;
 		if (tag == "Enemy") {
 			varManager.enemyDestroyed ();
+		}
+
+		if (explosionSound != null) {
+			explosionSound.Play ();
 		}
 	}
 	

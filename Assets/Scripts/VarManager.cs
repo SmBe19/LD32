@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class VarManager : MonoBehaviour {
 
+	public string nextLevel;
+	public float timeUntilNextLevel;
 	public float EnemyCount = 0;
 	public float LiveCount = 10;
 	public Text livesLabel;
@@ -36,6 +38,11 @@ public class VarManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (LiveCount <= 0) {
+			timeUntilNextLevel -= Time.deltaTime;
+			if(timeUntilNextLevel <= 0){
+				Application.LoadLevel(nextLevel);
+			}
+		}
 	}
 }
