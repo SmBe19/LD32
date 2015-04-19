@@ -99,14 +99,18 @@ public class generateCity : MonoBehaviour {
 			ActivationController.DeactivateChildren(go.gameObject, false, true);
 		}
 
-		varManager.EnemyCount += enemyCount;
-
 		hero.position = new Vector3 (start.x + heroStart.x * (completeBlockSize.x) - (streetWidth / 2) * houseSize.x,
 		                            0,
 		                             start.y + heroStart.y * (completeBlockSize.y) - (streetWidth / 2) * houseSize.y);
 
-		cam.position = hero.position;
-		varManager.updateText ();
+		if (cam != null) {
+			cam.position = hero.position;
+		}
+		
+		if (varManager != null) {
+			varManager.EnemyCount += enemyCount;
+			varManager.updateText ();
+		}
 	}
 	
 	// Update is called once per frame
