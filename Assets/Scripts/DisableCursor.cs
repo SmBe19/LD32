@@ -1,21 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartGameScript : MonoBehaviour {
-
-	public string nextLevel;
+public class DisableCursor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
 	
 	}
+
+	public void disableCursor(){
+		Cursor.visible = false;
+	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	public void OnClick(){
-		Application.LoadLevel (nextLevel);
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartGameScript : MonoBehaviour {
+public class LookAtController : MonoBehaviour {
 
-	public string nextLevel;
+	public Transform dest;
 
 	// Use this for initialization
 	void Start () {
@@ -12,10 +12,6 @@ public class StartGameScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
-
-	public void OnClick(){
-		Application.LoadLevel (nextLevel);
+		transform.LookAt (2*transform.position - dest.position);
 	}
 }
